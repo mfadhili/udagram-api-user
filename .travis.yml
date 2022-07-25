@@ -16,12 +16,12 @@ before_script:
 script:
   - sudo docker --version # give info on docker version
   - sudo docker build -t api-user ./
-  - sudo docker tag api-user mfadhiligitau/mono2micro
+  - sudo docker tag api-user mfadhiligitau/udagram-api-user
   - sudo docker --version 
 
 after_success: 
   - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-  - docker push mfadhiligitau/mono2micro
+  - docker push mfadhiligitau/udagram-api-user
   - docker images
 
 #deploy:
